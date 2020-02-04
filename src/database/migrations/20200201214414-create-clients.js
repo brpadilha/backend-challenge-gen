@@ -20,7 +20,7 @@ module.exports = {
         allowNull: false,
       },
       balance: {
-        type: Sequelize.NUMERIC,
+        type: Sequelize.DOUBLE,
         allowNull: true,
       },
 

@@ -9,7 +9,7 @@ class Client extends Model {
         cpf: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
-        balance: Sequelize.NUMERIC,
+        balance: Sequelize.DOUBLE,
       },
       {
         sequelize,
