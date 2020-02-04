@@ -69,7 +69,7 @@ $  yarn
 <h3> Installing docker containers used in this project </h3>
 
 ```
-docker run --name database -e POSTGRES_PASSWORD=docker -p 5433:5433 -d postgres
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 ```
 
 ```
