@@ -1,22 +1,48 @@
+# GEN - A Back-end NodeJS Challenge
+
+- Create Clients
+
+![create-clients](images/create_clients.png 'Create')
+
+- Session Client
+
+![session](images/session.png 'session')
+
+- Create Transactions
+
+![create-transactions](images/create_clients.png 'Create-transactions')
+
+- Retrieve Clients
+
+![retrieve-clients](images/retrieve_clients.png 'Retrieve-clients')
+
+- Retrieve Transactions
+
+![retrieve-transactions](images/retrieve_transactions.png 'Retrieve_transactions')
+
 # About this project
 
-This is a project made to resolve [this](https://github.com/lucasfonmiranda/gen-careers) backend challenge.
+This is a project made to resolve [this](https://github.com/lucasfonmiranda/gen-careers) backend challenges.
 
 ## Project resume
 
-This project is to build a REST API that will communicate with two different payment services, stripe and paypal.
+This project is to build a REST API that will communicate with two different payment services, stripe, and PayPal.
 
 ### API requirements:
 
 - A route to create Clients;
 - A route to create Transactions;
 - A route to retrieve Clients;
-- A route to retrieve transactions. It shall allows filtering by clients or payment service used;
-- A transaction should be created in only one payment service (randomly choosed in each request);
+- A route to retrieve transactions. It shall allow filtering by clients or payment service used;
+- A transaction should be created in only one payment service (randomly chosen in each request);
+
+### Different features
+
+- I created a route session that controls what the client make the transaction and retrieve the transactions.
 
 # Why?
 
-This project is a part of my portifolio, that I wanted to improve my skills of resolving problems and create APIs.I will be happy if you provide me any feedback about this project, anything that you can report, cam make me a better developer!
+This project is a part of my portfolio, that I wanted to improve my skills in resolving problems and create APIs.I will be happy if you provide me any feedback about this project, anything that you can report, cam make me a better developer!
 
 Email-me: brpadilha.dev@gmail.com
 
@@ -66,7 +92,7 @@ Username: postgres
 Password: docker
 ```
 
-In the root of this project you can find the `insomnia.json` that you can import on [insomnia]('https://insomnia.rest/download/') to make HTTP requests, view response details of this project.
+At the root of this project, you can find the `insomnia.json` that you can import on [insomnia]('https://insomnia.rest/download/') to make HTTP requests, view response details of this project.
 
 # Main libraries
 
