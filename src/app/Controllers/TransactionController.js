@@ -92,8 +92,6 @@ class TransactionController {
   }
 
   async index(req, res) {
-    // const { type } = req.body;
-
     const checkIsManager = await Client.findOne({
       where: {
         id: req.clientId,

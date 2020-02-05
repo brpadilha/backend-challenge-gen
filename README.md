@@ -68,12 +68,14 @@ $  yarn
 
 <h3> Installing docker containers used in this project </h3>
 
+Make sure that you have [docker](https://docs.docker.com/install/) on your computer on your computer, then run to install the containers:
+
 ```
-docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+$ docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 ```
 
 ```
-docker run --name mongobank -p 27017:27017 -d -t mongo
+$ docker run --name mongobank -p 27017:27017 -d -t mongo
 ```
 
 <h3> Migrate clients </h3>
@@ -81,7 +83,7 @@ docker run --name mongobank -p 27017:27017 -d -t mongo
 I used the PostgresSQL db to register clients. So you will need to run the migrate of clients:
 
 ```
-yarn sequelize db:migrate
+$ yarn sequelize db:migrate
 ```
 
 I used [Postbird]('https://www.electronjs.org/apps/postbird) to check my PostgresSQL.
@@ -92,12 +94,12 @@ Username: postgres
 Password: docker
 ```
 
-At the root of this project, you can find the `insomnia.json` that you can import on [insomnia]('https://insomnia.rest/download/') to make HTTP requests, view response details of this project.
+At the root of this project, you can find the `insomnia.json` that you can import on [insomnia]('https://insomnia.rest/download/') to make HTTP requests, how you saw at the beginning of this readme, view response details of this project.
 
 To run the application, on your terminal run:
 
 ```
-yarn dev
+$ yarn dev
 ```
 
 # Main libraries
