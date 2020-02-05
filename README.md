@@ -94,6 +94,12 @@ Password: docker
 
 At the root of this project, you can find the `insomnia.json` that you can import on [insomnia]('https://insomnia.rest/download/') to make HTTP requests, view response details of this project.
 
+To run the application, on your terminal run:
+
+```
+yarn dev
+```
+
 # Main libraries
 
 ```
@@ -106,4 +112,5 @@ At the root of this project, you can find the `insomnia.json` that you can impor
     "sequelize-cli"
     "youch"
     "yup"
+    "cors"
 ```

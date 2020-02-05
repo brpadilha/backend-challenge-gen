@@ -10,6 +10,7 @@ class Client extends Model {
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
         balance: Sequelize.DOUBLE,
+        manager: Sequelize.BOOLEAN,
       },
       {
         sequelize,

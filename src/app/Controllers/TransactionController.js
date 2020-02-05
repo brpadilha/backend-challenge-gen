@@ -7,20 +7,55 @@ class TransactionController {
     const schema = Yup.object().shape({
       type: Yup.string().required(),
       value: Yup.number().required(),
-      destination_client_id: Yup.string().required(),
+      destination_client_id: Yup.number().required(),
+      cpf: Yup.string().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { type, value, destination_client_id } = req.body;
+    const { type, value, destination_client_id, cpf } = req.body;
+
+    const id = destination_client_id;
+
+    const idClient = await Client.findOne({
+      where: { id },
+    });
+
+    const cpfClient = await Client.findOne({
+      where: { cpf },
+    });
+
+    if (!cpfClient || !idClient) {
+      return res
+        .status(401)
+        .json({ error: 'Client not found check the data again' });
+    }
+
+    if (idClient.id !== cpfClient.id && idClient.cpf !== cpfClient.cpf) {
+      return res.status(401).json({ error: 'Account does not match with cpf' });
+    }
+
+    const name_destination_client_id = idClient.name;
+
+    const originAccount = await Client.findOne({
+      where: { id: req.clientId },
+      attributes: ['id', 'name', 'cpf'],
+    });
+
+    const origin_client_id = originAccount.id;
+
+    const name_client = originAccount.name;
 
     const transaction = await Transaction.create({
-      origin_client_id: req.clientId,
+      origin_client_id,
+      name_client,
       type,
       destination_client_id,
+      name_destination_client_id,
       value,
+      cpf,
     });
 
     const senderMoney = await Client.findOne({
@@ -57,19 +92,22 @@ class TransactionController {
   }
 
   async index(req, res) {
-    const { type } = req.body;
+    // const { type } = req.body;
 
-    if (type == null) {
-      const transaction = await Transaction.find({
-        origin_client_id: req.clientId,
-      }).select('-_id -updatedAt -__v');
+    const checkIsManager = await Client.findOne({
+      where: {
+        id: req.clientId,
+        manager: true,
+      },
+    });
 
-      return res.json(transaction);
+    if (!checkIsManager) {
+      return res
+        .status(401)
+        .json({ error: 'Only manager can load the bank transactions' });
     }
 
-    const transaction = await Transaction.find({
-      type,
-    }).select('-_id -updatedAt -__v');
+    const transaction = await Transaction.find(req.query);
 
     return res.json(transaction);
   }

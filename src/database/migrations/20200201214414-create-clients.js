@@ -7,9 +7,11 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+
       cpf: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       name: {
         type: Sequelize.STRING,
@@ -23,7 +25,11 @@ module.exports = {
         type: Sequelize.DOUBLE,
         allowNull: true,
       },
-
+      manager: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+        fallowNull: false,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,

@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "dev": "nodemon src/server.js",
     "queue": "nodemon src/queue.js"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "express-handlebars": "^3.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.0",
+    "pg": "^7.18.1",
     "sequelize": "^5.21.2",
     "sequelize-cli": "^5.5.1",
     "youch": "^2.0.10",

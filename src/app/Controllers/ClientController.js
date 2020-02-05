@@ -23,13 +23,16 @@ class ClientController {
         .json({ error: 'Client with this CPF already exists' });
     }
 
-    const client = await Client.create(req.body);
+    const { id, name, email, manager } = await Client.create(req.body);
 
-    return res.json(client);
+    return res.json({ id, name, email, manager });
   }
 
   async index(req, res) {
     const clients = await Client.findAll({
+      where: {
+        manager: false,
+      },
       attributes: ['id', 'name', 'cpf', 'balance'],
     });
     return res.json(clients);
