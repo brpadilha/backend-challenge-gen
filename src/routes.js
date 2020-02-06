@@ -13,7 +13,7 @@ routes.post('/sessions', SessionController.store);
 routes.get('/clients', ClientController.index);
 
 routes.use(authMiddleware);
-routes.get('/transactions/bank', TransactionController.index);
+routes.get('/transactions', TransactionController.index);
 
 routes.post('/transactions', TransactionController.store);
 

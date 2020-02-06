@@ -22,7 +22,9 @@
 
 # About this project
 
-This is a project made to resolve [this](https://github.com/lucasfonmiranda/gen-careers) backend challenges.
+This is a project made to resolve [this](https://github.com/lucasfonmiranda/gen-careers) backend challenge.
+
+The [front-end]('https://github.com/brpadilha/front-end-challenge-gen') of this challenge.
 
 ## Project resume
 
@@ -57,7 +59,7 @@ Connect with me at [Linkedin](https://www.linkedin.com/in/brpadilha/)
 ```
 $ git clone git@github.com:brpadilha/backend-challenge-gen.git
 
-$ cd backend backend-challenge-gen
+$ cd backend-challenge-gen
 ```
 
 <h3>Installing dependencies</h3>

@@ -20,6 +20,10 @@ class SessionController {
 
     const client = await Client.findOne({ where: { cpf } });
 
+    if (!client) {
+      return res.status(400).json({ error: 'Client not found' });
+    }
+
     if (!(await client.checkPassword(password))) {
       return res.status(401).json({ error: 'Password does not match' });
     }

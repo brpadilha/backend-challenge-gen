@@ -23,9 +23,9 @@ class ClientController {
         .json({ error: 'Client with this CPF already exists' });
     }
 
-    const { id, name, email, manager } = await Client.create(req.body);
+    const { id, name, email, manager, balance } = await Client.create(req.body);
 
-    return res.json({ id, name, email, manager });
+    return res.json({ id, name, email, manager, balance });
   }
 
   async index(req, res) {
