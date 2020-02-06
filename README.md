@@ -26,7 +26,7 @@ This is a project made to resolve [this](https://github.com/lucasfonmiranda/gen-
 
 The [front-end]('https://github.com/brpadilha/front-end-challenge-gen') of this challenge.
 
-## Project resume
+# Project description
 
 This project is to build a REST API that will communicate with two different payment services, stripe, and PayPal.
 
@@ -44,7 +44,7 @@ This project is to build a REST API that will communicate with two different pay
 
 # Why?
 
-This project is a part of my portfolio, that I wanted to improve my skills in resolving problems and create APIs.I will be happy if you provide me any feedback about this project, anything that you can report, cam make me a better developer!
+This project is a part of my portfolio, that I wanted to improve my skills in resolving problems and create APIs.I will be happy if you provide me any feedback about this project, anything that you can report, can make me a better developer!
 
 Email-me: brpadilha.dev@gmail.com
 
