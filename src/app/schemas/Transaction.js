@@ -12,21 +12,17 @@ const TransactionSchema = new mongoose.Schema(
     },
     name_client: {
       type: String,
-      references: { model: 'clients', key: 'name' },
     },
     origin_client_id: {
       type: Number,
-      references: { model: 'clients', key: 'id' },
       required: true,
     },
     destination_client_id: {
       type: Number,
-      references: { model: 'clients', key: 'id' },
       required: true,
     },
     cpf_destination_client_id: {
       type: String,
-      references: { model: 'clients', key: 'cpf' },
     },
   },
   {
